@@ -1,0 +1,20 @@
+
+# IntelliJ
+.idea/
+*.iml
+
+# Java y Maven
+**/target/
+*.class
+
+# Android
+**/.gradle/
+**/build/
+**/local.properties
+**/.cxx/
+
+# Archivos locales y secretos
+.env
+.env.*
+!.env.example
+*.log

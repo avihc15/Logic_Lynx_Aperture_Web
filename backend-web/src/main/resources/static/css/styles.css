@@ -1,0 +1,1126 @@
+
+/* ==========================================
+   APERTURE - PALETA PREMIERE
+   Portada y acceso
+   ========================================== */
+
+:root {
+    --rojo: #C43D42;
+    --rojo-claro: #D85B5D;
+    --cereza: #792E38;
+    --dorado: #D9A977;
+    --crema: #FFF9F3;
+    --grafito: #303037;
+    --gris: #746F73;
+    --blanco: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--grafito);
+    background: #F2ECE8;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ==========================================
+   CONTENEDOR GENERAL
+   ========================================== */
+
+.pagina-inicio {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.portada {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    width: min(1220px, 100%);
+    min-height: 690px;
+    overflow: hidden;
+    border-radius: 26px;
+    background: var(--crema);
+    box-shadow: 0 20px 65px rgba(54, 35, 39, 0.12);
+}
+
+/* ==========================================
+   PANEL CINEMATOGRÁFICO
+   ========================================== */
+
+.panel-cine {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 690px;
+    padding: 55px 105px 55px 35px;
+    overflow: hidden;
+
+    background: linear-gradient(
+            155deg,
+            #DF7270 0%,
+            #CD4C55 48%,
+            #AB3949 100%
+    );
+}
+
+/* CURVA PRINCIPAL */
+
+.panel-cine::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    top: -8%;
+    right: -88px;
+    width: 140px;
+    height: 116%;
+    border-radius: 50%;
+    background: var(--crema);
+}
+
+/* ARCOS DECORATIVOS */
+
+.decoracion-cine {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.arco {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+}
+
+.arco-uno {
+    width: 560px;
+    height: 560px;
+    top: -360px;
+    left: -250px;
+    border: 2px solid rgba(255, 230, 212, 0.18);
+}
+
+.arco-dos {
+    width: 640px;
+    height: 640px;
+    top: -390px;
+    left: -280px;
+    border: 2px solid rgba(255, 230, 212, 0.12);
+}
+
+.arco-tres {
+    width: 520px;
+    height: 520px;
+    bottom: -380px;
+    left: -260px;
+    border: 2px solid rgba(255, 230, 212, 0.17);
+}
+
+/* ILUSTRACIÓN */
+
+.ambiente-cine {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.halo-cine {
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    max-width: 100%;
+    border-radius: 50%;
+
+    background: radial-gradient(
+            circle,
+            rgba(255, 239, 220, 0.18),
+            transparent 72%
+    );
+}
+
+.imagen-cine {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: min(420px, 100%);
+    height: auto;
+    object-fit: contain;
+
+    filter: drop-shadow(
+            0 20px 24px rgba(60, 21, 28, 0.22)
+    );
+}
+
+/* ==========================================
+   PANEL DE BIENVENIDA
+   ========================================== */
+
+.panel-bienvenida {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 690px;
+    padding: 65px 60px 30px;
+    background: var(--crema);
+}
+
+.contenido-bienvenida {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.presentacion {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 55px;
+}
+
+/* BIENVENIDA */
+
+.texto-bienvenida {
+    display: block;
+    margin-bottom: 27px;
+    color: var(--rojo);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* MARCA */
+
+.marca-aperture {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 53px;
+}
+
+.logo-aperture {
+    display: block;
+    width: 78px;
+    height: 78px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.marca-aperture h1 {
+    margin: 0;
+    color: var(--grafito);
+    font-size: clamp(50px, 5vw, 76px);
+    font-weight: 750;
+    letter-spacing: -3.5px;
+    line-height: 1.1;
+}
+
+/* SUBTÍTULO */
+
+.presentacion h2 {
+    max-width: 480px;
+    margin: 0 0 35px;
+    color: var(--grafito);
+    font-size: clamp(24px, 2.3vw, 31px);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.35;
+}
+
+/* DESCRIPCIÓN */
+
+.descripcion {
+    max-width: 465px;
+    margin: 0;
+    color: var(--gris);
+    font-size: 16px;
+    line-height: 1.95;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+/* BOTÓN */
+
+.boton-acceso {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 55px;
+    min-width: 285px;
+    margin-top: 49px;
+    padding: 19px 26px;
+    border-radius: 11px;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-size: 16px;
+    font-weight: 600;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.boton-acceso:hover,
+.boton-login:hover {
+    background: var(--cereza);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(121, 46, 56, 0.20);
+}
+
+.boton-acceso:focus-visible,
+.boton-login:focus-visible,
+.campo-formulario input:focus-visible,
+.enlace-regresar:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+.flecha {
+    font-size: 25px;
+    line-height: 1;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-bienvenida {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding-top: 20px;
+    border-top: 1px solid #E8DCD5;
+    color: #93858A;
+    font-size: 11px;
+}
+
+/* ==========================================
+   PANTALLA DE LOGIN
+   ========================================== */
+
+.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.contenedor-login {
+    display: grid;
+    grid-template-columns: 47% 53%;
+    width: min(1100px, 100%);
+    min-height: 650px;
+    overflow: hidden;
+    border-radius: 26px;
+    background: var(--crema);
+    box-shadow: 0 20px 65px rgba(54, 35, 39, 0.12);
+}
+
+/* PANEL IZQUIERDO DEL LOGIN */
+
+.panel-login-cine {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 650px;
+    padding: 55px 50px;
+    overflow: hidden;
+
+    background: linear-gradient(
+            155deg,
+            #DF7270 0%,
+            #CD4C55 48%,
+            #AB3949 100%
+    );
+}
+
+.panel-login-cine::before,
+.panel-login-cine::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 2px solid rgba(255, 232, 217, 0.16);
+    border-radius: 50%;
+}
+
+.panel-login-cine::before {
+    top: -360px;
+    left: -260px;
+}
+
+.panel-login-cine::after {
+    bottom: -380px;
+    right: -250px;
+}
+
+.imagen-login {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(400px, 100%);
+    height: auto;
+    filter: drop-shadow(
+            0 20px 24px rgba(60, 21, 28, 0.20)
+    );
+}
+
+/* PANEL DERECHO DEL LOGIN */
+
+.panel-login-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 45px 65px 30px;
+}
+
+.encabezado-login {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-login {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.nombre-login {
+    color: var(--grafito);
+    font-size: 27px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.contenido-login {
+    width: 100%;
+    padding: 35px 0 45px;
+}
+
+.etiqueta-login {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--rojo);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.contenido-login h1 {
+    margin: 0 0 15px;
+    color: var(--grafito);
+    font-size: clamp(30px, 3vw, 40px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.descripcion-login {
+    margin: 0 0 35px;
+    color: var(--gris);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* CAMPOS */
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campo-formulario label {
+    color: var(--grafito);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo-formulario input {
+    width: 100%;
+    height: 54px;
+    padding: 0 17px;
+    border: 1px solid #DDD2CD;
+    border-radius: 9px;
+    outline: none;
+    background: #FFFFFF;
+    color: var(--grafito);
+    font: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s ease;
+}
+
+.campo-formulario input:focus {
+    border-color: var(--rojo);
+}
+
+.campo-formulario input::placeholder {
+    color: #A99FA0;
+}
+
+/* BOTÓN LOGIN */
+
+.boton-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 55px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.boton-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* REGRESAR */
+
+.enlace-regresar {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    color: var(--cereza);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.enlace-regresar:hover {
+    text-decoration: underline;
+}
+
+.aviso-login {
+    margin: 15px 0 0;
+    color: var(--gris);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.pie-login {
+    padding-top: 18px;
+    border-top: 1px solid #E8DCD5;
+    color: #93858A;
+    font-size: 11px;
+}
+
+/* ==========================================
+   PANTALLAS MEDIANAS
+   ========================================== */
+
+@media (max-width: 1050px) {
+
+    .portada {
+        grid-template-columns: 45% 55%;
+    }
+
+    .panel-cine {
+        padding: 40px 90px 40px 25px;
+    }
+
+    .panel-bienvenida {
+        padding: 45px 35px 25px;
+    }
+
+    .marca-aperture h1 {
+        font-size: 60px;
+    }
+
+    .logo-aperture {
+        width: 65px;
+        height: 65px;
+    }
+
+    .panel-login-formulario {
+        padding: 40px 40px 25px;
+    }
+}
+
+/* ==========================================
+   TABLETAS
+   ========================================== */
+
+@media (max-width: 760px) {
+
+    .pagina-inicio,
+    .pagina-login {
+        padding: 18px;
+    }
+
+    .portada,
+    .contenedor-login {
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+    }
+
+    .panel-cine {
+        min-height: 350px;
+        padding: 30px;
+    }
+
+    .panel-cine::after {
+        display: none;
+    }
+
+    .imagen-cine {
+        width: min(310px, 85%);
+    }
+
+    .panel-bienvenida {
+        min-height: 570px;
+        padding: 45px 38px 28px;
+    }
+
+    .presentacion {
+        padding: 15px 0 55px;
+    }
+
+    .marca-aperture h1 {
+        font-size: 68px;
+    }
+
+    .panel-login-cine {
+        min-height: 290px;
+        padding: 30px;
+    }
+
+    .imagen-login {
+        width: min(280px, 75%);
+    }
+
+    .panel-login-formulario {
+        min-height: 580px;
+        padding: 35px;
+    }
+}
+
+/* ==========================================
+   TELÉFONOS
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .pagina-inicio,
+    .pagina-login {
+        padding: 0;
+    }
+
+    .portada,
+    .contenedor-login {
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    .panel-cine {
+        min-height: 270px;
+        padding: 24px;
+    }
+
+    .imagen-cine {
+        width: 245px;
+    }
+
+    .panel-bienvenida {
+        padding: 38px 25px 25px;
+    }
+
+    .texto-bienvenida {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .marca-aperture {
+        gap: 12px;
+        margin-bottom: 36px;
+    }
+
+    .logo-aperture {
+        width: 52px;
+        height: 52px;
+    }
+
+    .marca-aperture h1 {
+        font-size: clamp(43px, 11vw, 56px);
+        letter-spacing: -2.5px;
+    }
+
+    .presentacion h2 {
+        font-size: 25px;
+    }
+
+    .descripcion {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .boton-acceso {
+        width: 100%;
+        margin-top: 38px;
+    }
+
+    .pie-bienvenida {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .panel-login-cine {
+        min-height: 230px;
+    }
+
+    .imagen-login {
+        width: 220px;
+    }
+
+    .panel-login-formulario {
+        padding: 30px 25px;
+    }
+
+    .contenido-login h1 {
+        font-size: 32px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .boton-acceso,
+    .boton-login {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   APERTURE - LOGIN DEFINITIVO (DISEÑO)
+   ========================================== */
+
+.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.contenedor-login {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    width: min(1220px, 100%);
+    min-height: 690px;
+    overflow: hidden;
+    border-radius: 26px;
+    background: var(--crema);
+    box-shadow: 0 20px 65px rgba(54,35,39,.12);
+}
+
+/* PANEL DE LOS EMPLEADOS */
+
+.panel-login-cine {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 690px;
+    padding: 65px 70px 65px 45px;
+    overflow: hidden;
+
+    background: linear-gradient(
+            155deg,
+            #DF7270 0%,
+            #CD4C55 48%,
+            #AB3949 100%
+    );
+}
+
+/* CURVA PRINCIPAL */
+
+.panel-login-cine::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: -8%;
+    right: -88px;
+    width: 140px;
+    height: 116%;
+    border: none;
+    border-radius: 50%;
+    background: var(--crema);
+}
+
+.panel-login-cine::after {
+    display: none;
+}
+
+/* CURVAS DECORATIVAS */
+
+.curvas-login {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.curva-login {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,225,203,.20);
+}
+
+.curva-1 {
+    width: 520px;
+    height: 520px;
+    top: -380px;
+    left: -230px;
+}
+
+.curva-2 {
+    width: 600px;
+    height: 600px;
+    top: -410px;
+    left: -270px;
+}
+
+.curva-3 {
+    width: 680px;
+    height: 680px;
+    top: -450px;
+    left: -310px;
+    border-color: rgba(217,169,119,.28);
+}
+
+.curva-4 {
+    width: 510px;
+    height: 510px;
+    bottom: -370px;
+    left: -250px;
+}
+
+.curva-5 {
+    width: 590px;
+    height: 590px;
+    bottom: -420px;
+    left: -285px;
+}
+
+.curva-6 {
+    width: 670px;
+    height: 670px;
+    bottom: -465px;
+    left: -320px;
+    border-color: rgba(217,169,119,.28);
+}
+
+/* IMAGEN DE LOS EMPLEADOS */
+
+.imagen-login {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: min(410px, 100%);
+    height: auto;
+    max-height: 490px;
+    object-fit: contain;
+    filter: drop-shadow(
+            0 18px 20px rgba(70,25,35,.15)
+    );
+}
+
+/* PANEL DERECHO */
+
+.panel-login-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 690px;
+    padding: 45px 60px 30px;
+    background: var(--crema);
+}
+
+.encabezado-login {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-login {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+}
+
+.nombre-login {
+    font-size: 28px;
+    font-weight: 750;
+    letter-spacing: -1px;
+    color: var(--grafito);
+}
+
+/* CONTENIDO */
+
+.contenido-login {
+    width: 100%;
+    padding: 28px 0;
+}
+
+.etiqueta-login {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--rojo);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.contenido-login h1 {
+    margin: 0 0 15px;
+    color: var(--grafito);
+    font-size: clamp(30px, 3vw, 39px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.descripcion-login {
+    margin: 0 0 30px;
+    color: var(--gris);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* FORMULARIO */
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo-formulario label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--grafito);
+}
+
+.campo-formulario input {
+    width: 100%;
+    height: 54px;
+    padding: 0 17px;
+    border: 1px solid #DDD2CD;
+    border-radius: 9px;
+    background: #FFFFFF;
+    color: var(--grafito);
+    font: inherit;
+    font-size: 15px;
+}
+
+.campo-formulario input:focus {
+    outline: 2px solid var(--dorado);
+    outline-offset: 1px;
+    border-color: var(--rojo);
+}
+
+.campo-formulario input::placeholder {
+    color: #A99FA0;
+}
+
+/* BOTÓN */
+
+.boton-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 55px;
+    margin-top: 8px;
+    padding: 0 25px;
+    border: none;
+    border-radius: 10px;
+    background: var(--rojo);
+    color: white;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.boton-login:disabled {
+    background: #B18488;
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.boton-login span {
+    font-size: 24px;
+}
+
+/* VOLVER A LA PORTADA */
+
+.enlace-regresar {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 9px 0;
+    color: var(--cereza);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.enlace-regresar span {
+    font-size: 21px;
+    transition: transform .2s ease;
+}
+
+.enlace-regresar:hover {
+    text-decoration: none;
+}
+
+.enlace-regresar:hover span {
+    transform: translateX(-4px);
+}
+
+/* PIE SEPARADO */
+
+.pie-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E8DCD5;
+    color: #93858A;
+    font-size: 11px;
+}
+
+/* PANTALLAS MEDIANAS */
+
+@media (max-width: 1050px) {
+    .panel-login-formulario {
+        padding: 35px 35px 25px;
+    }
+
+    .panel-login-cine {
+        padding: 45px 65px 45px 25px;
+    }
+}
+
+/* TABLETAS */
+
+@media (max-width: 760px) {
+    .contenedor-login {
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+    }
+
+    .panel-login-cine {
+        min-height: 310px;
+        padding: 30px;
+    }
+
+    .panel-login-cine::before {
+        display: none;
+    }
+
+    .imagen-login {
+        width: min(280px, 80%);
+        max-height: 270px;
+    }
+
+    .panel-login-formulario {
+        min-height: 570px;
+        padding: 35px;
+    }
+
+    .contenido-login {
+        padding: 35px 0;
+    }
+}
+
+/* TELÉFONOS */
+
+@media (max-width: 480px) {
+    .pagina-login {
+        padding: 0;
+    }
+
+    .contenedor-login {
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    .panel-login-cine {
+        min-height: 230px;
+    }
+
+    .imagen-login {
+        width: 210px;
+    }
+
+    .panel-login-formulario {
+        padding: 30px 25px;
+    }
+
+    .contenido-login h1 {
+        font-size: 31px;
+    }
+
+    .pie-login {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}

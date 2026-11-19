@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Aperture | Acceso</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+<main class="pagina-login">
+    <section class="contenedor-login">
+
+        <!-- PANEL IZQUIERDO -->
+        <div class="panel-login-cine">
+
+            <div class="curvas-login" aria-hidden="true">
+                <span class="curva-login curva-1"></span>
+                <span class="curva-login curva-2"></span>
+                <span class="curva-login curva-3"></span>
+                <span class="curva-login curva-4"></span>
+                <span class="curva-login curva-5"></span>
+                <span class="curva-login curva-6"></span>
+            </div>
+
+            <img
+                    src="/img/empleados.png"
+                    alt="Personal de Aperture"
+                    class="imagen-login"
+            >
+
+        </div>
+
+        <!-- PANEL DERECHO -->
+        <div class="panel-login-formulario">
+
+            <header class="encabezado-login">
+                <img
+                        src="/img/logo-aperture.png"
+                        alt="Logotipo de Aperture"
+                        class="logo-login"
+                >
+                <span class="nombre-login">Aperture</span>
+            </header>
+
+            <div class="contenido-login">
+
+                <span class="etiqueta-login">
+                    ACCESO AL PERSONAL
+                </span>
+
+                <h1>¡Bienvenido de nuevo!</h1>
+
+                <p class="descripcion-login">
+                    Ingresa tus credenciales para acceder
+                    a tu espacio de trabajo.
+                </p>
+
+                <form class="formulario-login"
+                      method="post"
+                      action="/login">
+
+                    <div class="campo-formulario">
+                        <label for="clave">
+                            Clave de personal
+                        </label>
+
+                        <input
+                                type="text"
+                                id="clave"
+                                name="username"
+                                placeholder="Ingresa tu clave"
+                                autocomplete="username"
+                                required
+                        >
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="contrasena">
+                            Contraseña
+                        </label>
+
+                        <input
+                                type="password"
+                                id="contrasena"
+                                name="password"
+                                placeholder="Ingresa tu contraseña"
+                                autocomplete="current-password"
+                                required
+                        >
+                    </div>
+
+                    <!-- Se habilitará con la autenticación -->
+                    <button
+                            type="submit"
+                            class="boton-login"
+                            disabled
+                    >
+                        Iniciar sesión
+                        <span aria-hidden="true">&rarr;</span>
+                    </button>
+
+                </form>
+
+                <a href="/" class="enlace-regresar">
+                    <span aria-hidden="true">&larr;</span>
+                    Volver a la portada
+                </a>
+
+            </div>
+
+            <footer class="pie-login">
+                <span>© 2026 Aperture</span>
+                <span>Desarrollado por Logic Lynx</span>
+            </footer>
+
+        </div>
+
+    </section>
+</main>
+
+</body>
+</html>
